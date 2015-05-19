@@ -64,13 +64,10 @@
         <a class="navbar-brand" href="#">Project Everyone</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <!-- <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li> -->
           </ul>
 	        <div class="navbar-text pull-right">
     				<% if user_signed_in? %>
-    				  Logged in as <strong><%= current_user.email %></strong>.
+    				  Logged in as <strong><%= current_user.name %></strong>.
     				  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
     				  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
     				<% else %>
@@ -85,13 +82,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <%= bootstrap_flash %>
+          <!-- <%= bootstrap_flash %> -->
           <%= yield %>
         </div>
       </div><!--/row-->
 
       <footer>
-        <p>Global Goals</p>
       </footer>
 
     </div> <!-- /container -->
