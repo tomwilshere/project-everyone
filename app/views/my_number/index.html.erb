@@ -1,5 +1,17 @@
 <div class="jumbotron">
-  <h1>Welcome, your number is: <%= current_user.id %>!</h1>
-  <p>...</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <% if current_user %>
+  	<h1>Welcome, your number is: <%= current_user.id %>!</h1>
+  <% else %>
+  	<h1>Sign in to get your crew number!</h1>
+  <% end %>
+</div>
+<h2>See who's spreading the global goals:</h2>
+<div id="googleMap"></div>
+
+<h2>Find out more about the #globalgoals:</h2>
+<div class="row">
+<% 17.times do |i| %>
+<div class="col-md-2 goal-square"><span class="goal-number"><%= i+1 %></span></div>
+<% end %>
+<div class="col-md-2 goal-square"><span class="goal-number"><%= image_tag("global-goals-logo.png")%></span></div>
 </div>
